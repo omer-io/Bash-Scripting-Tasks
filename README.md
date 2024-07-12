@@ -1,7 +1,7 @@
 # Bash Scripting Tasks
 
 This repo contains bash scripts of following tasks:
-
+---
 **Task 1**
 Create a backup script that copies all files in a specific directory to another directory, with the option to compress the files into a tarball for efficient storage.
 ---
