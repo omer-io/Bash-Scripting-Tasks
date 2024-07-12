@@ -5,18 +5,23 @@ This repo contains bash scripts of following tasks:
 **Task 1**
 Create a backup script that copies all files in a specific directory to another directory, with the option to compress the files into a tarball for efficient storage.
 ---
+
 **Task 2**
 Write a script that searches for a specific keyword in a directory of text files, and prints the line numbers and filenames where the keyword is found. The result should be displayed on the terminal as well as stored in a file ‘output.txt’.
 ---
+
 **Task 3**
 Create a script that automatically generates a report of system usage, including CPU and memory usage, disk space, and network statistics.
 ---
+
 **Task 4**
 Create a Bash script that continuously monitors a log file in real-time and triggers an alert when a specific event, such as the detection of an error or warning message, takes place. An example log file is provided as an attachment for reference.
 ---
+
 **Task 5**
 Develop a script that automatically updates a Git repository with new changes(stage & commit changes), and pushes those changes to a remote repository. This can be useful for automating the deployment process of a web application.
 ---
+
 **Task 6**
 You have a CSV file (link here) with the following columns: "First Name", "Last Name", "Email", and "Phone Number". Your task is to create a script that will perform the following tasks:
 ---
