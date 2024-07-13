@@ -1,16 +1,29 @@
 #!/bin/bash
 
-path1="/home/ubuntu/rakurai/hello"
-path2="/home/ubuntu/rakurai/aa"
+usage() {
+    echo -e "Usage: "$0" [option] [sourcePath] [destPath]\n" 
+    echo "Options: -c   compress directory"
+    exit 1
+}
 
-echo "Source Path: $path1"
-echo "Destination Path: $path2"
-cp -r $path1 $path2
+if [ "$#" -lt 2 ]; then
+    usage
+fi
+
+compress=false
+if [ "$1" = "-c" ]; then
+    compress=true
+    shift
+fi
+
+echo "Source Path: $1"
+echo "Destination Path: $2"
+cp -r $1 $2
 echo "Directory copied."
 
-if [ $1 = y ]; then 
-tar -czf "$path2/archivetar.tar.gz" "hello/"
-echo "Directory compressed."
+if [ "$compress" = true ]; then 
+    tar -czf "$2/archivetar.tar.gz" "$1"
+    echo "Directory compressed."
 else
-echo "Directory not compressed."
+    echo "Directory not compressed."
 fi
