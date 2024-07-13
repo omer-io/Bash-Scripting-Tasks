@@ -1,9 +1,13 @@
 #!/bin/bash
 
-dir="txtfiles/*.txt"
+usage() {
+    echo -e "Usage: $0 [txtFilesDirectoryPath] [keywordToSearch]\n"
+    exit 1
+}
 
-echo "Enter keyword to search in text files"
-read word
+if [ $# != 2 ]; then
+    usage
+fi
 
-egrep -in $word $dir | tee output.txt
-echo "Output written in txt file."
+grep -E -in "$2" "$1"/*.txt | tee output.txt
+echo "Output written in output.txt"
