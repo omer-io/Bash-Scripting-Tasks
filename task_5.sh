@@ -1,8 +1,15 @@
 #!/bin/bash
 
-# read local repo path from user
-echo -e "\nEnter local repo path"
-read repo_path
+usage() {
+    echo -e "Usage: $0 [repo_path]"
+    exit 1
+}
+
+if [ $# -ne 1 ]; then
+    usage
+fi
+
+repo_path=$1
 cd "$repo_path" || exit
 
 # check repo status
@@ -34,4 +41,3 @@ if [ -n "$changed_files" ]; then
 else
     echo -e "\nNo changes to commit"
 fi
-echo "hello"
