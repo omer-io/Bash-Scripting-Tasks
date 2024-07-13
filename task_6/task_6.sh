@@ -12,14 +12,9 @@ fi
 #task2
 newdata="formatted.csv"
 touch $newdata
-echo -e "First Name\tLast Name\tEmail\tPhone Number\tFull Name\tEmail Domain" > "$newdata"
 
 #task3
 logs="warnings.log"
-
-> "$logs"
-
-read -r header < "$data"
 
 #task3,4,5,7
 temp=$(while IFS=, read -r col1 col2 col3 col4; do
@@ -35,11 +30,9 @@ done < <(tail -n +2 "$data"))
 
 #task6
 sorted_data=$(echo "$temp" | sort -t, -k5,5)
-header=$(head -n 1 "$newdata")
-{
-    echo "$header"
-    echo "$sorted_data"
-} > "$newdata"
+
+echo "First Name,Last Name,Email,Phone Number,Full Name,Domain Name" > "$newdata"
+echo "$sorted_data" >> "$newdata"
 
 echo "Warnings in $logs"
 
