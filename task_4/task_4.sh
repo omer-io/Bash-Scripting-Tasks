@@ -9,9 +9,9 @@ monitor_log() {
             tail -c +"$last_position" "$logs" | egrep -o '(^error:|^warning:).*' | while read -r line; do
                 echo "Alert: $line"
             done
-            last_position="$current_position" 
         fi
+        last_position="$current_position" 
     done
 }
 
-monitor_log()
+monitor_log

@@ -41,3 +41,8 @@ info: http response received
 warning: API limit reached
 error: unable to create loopback connection
 error: unable to open epoll ws connection
+error: unable to open epoll ws connection
+error: unable to open epoll ws connection
+error: unable to open epoll ws connection
+info: http response received
+warning: API limit reached
